@@ -1,0 +1,53 @@
+<div class="panel panel-default"> <!--*ngIf="consultants"-->
+    <div class="panel-heading">
+    <!--{{pageTitle + ': ' + consultant.consultantName }}-->
+    {{ pageTitle }}
+    </div>
+    
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6 col-xs-6'>
+                <div class='row'>
+                    <div class='col-md-3'>First Name:</div>
+                    <div class='col-md-6'>{{consultant.consultantName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Last Name:</div>
+                    <div class='col-md-6'>{{consultant.consultantLname}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Title:</div>
+                    <div class='col-md-6'>{{consultant.consultantTitle}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Expertise:</div>
+                    <div class='col-md-6'>{{consultant.expertise}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Level of Expertise:</div>
+                    <div class='col-md-6'>{{consultant.LevelExpertise}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Primary Interest:</div>
+                    <div class='col-md-6'>{{consultant.primaryInterest}}</div>
+                </div>
+            </div>
+
+            <div class='col-md-6 col-xs-6'>Image:
+                <img class='center-block img-responsive' 
+                    [style.width.px]='200' 
+                    [style.margin.px]='2' 
+                    [src]='consultant.imageUrl'
+                    [title]='consultant.consultantName'>
+            </div>
+        </div><!--row-->
+    </div><!--panel-->
+    
+    
+    
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>

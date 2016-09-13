@@ -27,13 +27,17 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             ConsultantService = (function () {
                 function ConsultantService(_http) {
                     this._http = _http;
-                    this._consultantUrl = 'api/consultant/consultant1.json';
+                    this._consultantUrl = 'api/consultants/consultant1.json';
                 }
-                ConsultantService.prototype.getConsultant = function () {
+                ConsultantService.prototype.getConsultants = function () {
                     return this._http.get(this._consultantUrl)
                         .map(function (response) { return response.json(); })
-                        .do(function (data) { return console.log("All: " + JSON.stringify(data)); })
+                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
                         .catch(this.handleError);
+                };
+                ConsultantService.prototype.getConsultant = function (id) {
+                    return this.getConsultants()
+                        .map(function (consultants) { return consultants.find(function (p) { return p.consultantId === id; }); });
                 };
                 ConsultantService.prototype.handleError = function (error) {
                     console.error(error);
