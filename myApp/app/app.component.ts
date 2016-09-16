@@ -4,6 +4,8 @@ import 'rxjs/Rx'; //Load all features
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router'; 
 
 import { ConsultantListComponent } from './consultants/consultant-list.component';
+import { AtoListComponent } from './consultants/ato-list.component';
+import { SkillListComponent } from './consultants/skill-list.component';
 import { ConsultantService } from './consultants/consultant.service';
 import { WelcomeComponent } from './home/welcome.component';
 import { ConsultantDetailComponent } from './consultants/consultant-detail.component';
@@ -16,8 +18,10 @@ import { ConsultantDetailComponent } from './consultants/consultant-detail.compo
             <div class='container-fluid'>
             <a class='navbar-brand'>{{pageTitle}}</a>
             <ul class='nav navbar-nav'>
-                <li><a [routerLink]="['Welcome']">Home</a></li>
-                <li><a [routerLink]="['Consultants']">Consultant List</a></li>
+                <li><a [routerLink]="['Home']">Home</a></li>
+                <li><a [routerLink]="['Consultants']">Consultants</a></li>
+                <li><a [routerLink]="['ATO']">ATO</a></li>
+                <li><a [routerLink]="['Skills']">Skills</a></li>
             </ul>
             </div>
         </nav>
@@ -32,10 +36,12 @@ import { ConsultantDetailComponent } from './consultants/consultant-detail.compo
                 ROUTER_PROVIDERS]
 })
 @RouteConfig([
-    { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
+    { path: '/home', name: 'Home', component: WelcomeComponent, useAsDefault: true },
     { path: '/consultants', name: 'Consultants', component:ConsultantListComponent },
-    { path: '/consultant/:id', name: 'ConsultantDetail', component:ConsultantDetailComponent }
+    { path: '/consultant/:id', name: 'ConsultantDetail', component:ConsultantDetailComponent },
+    { path: '/ato', name: 'ATO', component:AtoListComponent },
+    { path: '/skills', name: 'Skills', component:SkillListComponent }
 ])
 export class AppComponent {
-    pageTitle: string = 'Sogeti USA LLC';
+    pageTitle: string = 'Sogeti';
 }

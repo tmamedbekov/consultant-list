@@ -4,6 +4,8 @@ import { RouteParams, Router } from 'angular2/router';
 import { IConsultant } from './consultant'
 import { ConsultantService } from './consultant.service';
 
+import { ActivatedRoute } from 'angular2/router';
+
 @Component({
     templateUrl: 'app/consultants/consultant-detail.component.html'
 })
@@ -15,7 +17,8 @@ export class ConsultantDetailComponent implements OnInit {
     
     constructor (private _consultantService: ConsultantService,
                  private _routeParams: RouteParams,
-                 private _router: Router) {
+                 private _router: Router,
+                 private _route: RouteParams) {
     }
     
     ngOnInit() {

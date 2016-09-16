@@ -36,9 +36,17 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                         .catch(this.handleError);
                 };
                 ConsultantService.prototype.getConsultant = function (id) {
-                    return this.getConsultants()
-                        .map(function (consultants) { return consultants.find(function (p) { return p.consultantId === id; }); });
+                    return this._http.get(this._consultantUrl)
+                        .map(function (response) { return response.json(); })
+                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+                        .catch(this.handleError);
                 };
+                // getConsultant(id: number): Observable<IConsultant> {
+                //     return this._http.get(this._consultantUrl)
+                //         .map((response: Response) => <IConsultant> response.json())
+                //         .do(data => console.log('All: ' + JSON.stringify(data)))
+                //         .catch(this.handleError);
+                // }
                 ConsultantService.prototype.handleError = function (error) {
                     console.error(error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');

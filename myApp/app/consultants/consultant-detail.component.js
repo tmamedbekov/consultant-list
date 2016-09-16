@@ -25,10 +25,11 @@ System.register(['angular2/core', 'angular2/router', './consultant.service'], fu
             }],
         execute: function() {
             ConsultantDetailComponent = (function () {
-                function ConsultantDetailComponent(_consultantService, _routeParams, _router) {
+                function ConsultantDetailComponent(_consultantService, _routeParams, _router, _route) {
                     this._consultantService = _consultantService;
                     this._routeParams = _routeParams;
                     this._router = _router;
+                    this._route = _route;
                     this.pageTitle = 'Consultant Details';
                 }
                 ConsultantDetailComponent.prototype.ngOnInit = function () {
@@ -50,7 +51,7 @@ System.register(['angular2/core', 'angular2/router', './consultant.service'], fu
                     core_1.Component({
                         templateUrl: 'app/consultants/consultant-detail.component.html'
                     }), 
-                    __metadata('design:paramtypes', [consultant_service_1.ConsultantService, router_1.RouteParams, router_1.Router])
+                    __metadata('design:paramtypes', [consultant_service_1.ConsultantService, router_1.RouteParams, router_1.Router, router_1.RouteParams])
                 ], ConsultantDetailComponent);
                 return ConsultantDetailComponent;
             }());

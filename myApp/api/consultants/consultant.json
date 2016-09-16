@@ -1,0 +1,42 @@
+[
+    {
+        "consultantId": 1,
+        "consultantName": "Tony",
+        "consultantLname": "Mamedbekov",
+        "consultantTitle": "Senior Consultant",
+        "expertise": "UI Developer",
+        "levelExpertise": "Advanced",
+        "primaryInterest": "Front End Development",
+        "imageUrl": "https://openclipart.org/image/100px/svg_to_png/4749/acspike-male-user-icon.png"
+    },
+    {
+        "consultantId": 2,
+        "consultantName": "Mark",
+        "consultantLname": "Smith",
+        "consultantTitle": "Associate Consultant",
+        "expertise": "Graphic Design",
+        "levelExpertise": "Intermediate",
+        "primaryInterest": ".NET",
+        "imageUrl": "https://openclipart.org/image/100px/svg_to_png/4749/acspike-male-user-icon.png"
+    },
+    {
+        "consultantId": 3,
+        "consultantName": "Dan",
+        "consultantLname": "Luciano",
+        "consultantTitle": "Practice Manager",
+        "expertise": "JAVA",
+        "levelExpertise": "Advanced",
+        "primaryInterest": "Golf",
+        "imageUrl": "https://openclipart.org/image/100px/svg_to_png/4749/acspike-male-user-icon.png"
+    },
+    {
+        "consultantId": 4,
+        "consultantName": "John",
+        "consultantLname": "Smith",
+        "consultantTitle": "Associate Consultant",
+        "expertise": "C#",
+        "levelExpertise": "Advanced",
+        "primaryInterest": "C#",
+        "imageUrl": "https://openclipart.org/image/100px/svg_to_png/4749/acspike-male-user-icon.png"
+    }
+]

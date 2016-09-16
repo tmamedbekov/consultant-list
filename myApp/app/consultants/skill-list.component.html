@@ -1,0 +1,36 @@
+<div class='panel panel-default'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2'>Filter by skill:</div>
+            <div class='col-md-4'>
+                <input type='text' 
+                    [(ngModel)]='listFilter'/>
+            </div>
+        </div>
+ 
+        <div class='table-responsive'>
+            <table class='table' *ngIf='consultants && consultants.length'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Skills</th>
+                    </tr>
+                    </thead>
+                <tbody>
+                    <tr *ngFor='#consultant of consultants | consultantFilter:listFilter'>
+
+                        <td>
+                            <a [routerLink]="['ConsultantDetail',{id: consultant.consultantID}]">
+                            {{ consultant.consultantName}} {{ consultant.consultantLname}}
+                            </a>
+                        </td>
+                        <td>{{ consultant.expertise}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

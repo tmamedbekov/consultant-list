@@ -18,9 +18,18 @@ export class ConsultantService {
     }
     
     getConsultant(id: number): Observable<IConsultant> {
-        return this.getConsultants()
-            .map((consultants: IConsultant[]) => consultants.find(p => p.consultantId === id));
+        return this._http.get(this._consultantUrl)
+            .map((response: Response) => <IConsultant> response.json())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
     }
+    
+    // getConsultant(id: number): Observable<IConsultant> {
+    //     return this._http.get(this._consultantUrl)
+    //         .map((response: Response) => <IConsultant> response.json())
+    //         .do(data => console.log('All: ' + JSON.stringify(data)))
+    //         .catch(this.handleError);
+    // }
     
     private handleError(error: Response) {
         console.error(error);
