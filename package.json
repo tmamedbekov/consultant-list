@@ -2,7 +2,7 @@
     "name": "consultant-list",
     "version": "1.0.0",
     "author": "Tony Mamedbekov",
-    "description": "List of Consultants at Sogeti",
+    "description": "Sitecore MVP List",
     "scripts": {
         "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
         "tsc": "tsc",
@@ -19,7 +19,7 @@
         "reflect-metadata": "0.1.2",
         "rxjs": "5.0.0-beta.2",
         "zone.js": "0.6.10",
-        "bootstrap": "^3.3.6"
+        "bootstrap": "4.1.2"
     },
     "devDependencies": {
         "concurrently": "^2.0.0",
