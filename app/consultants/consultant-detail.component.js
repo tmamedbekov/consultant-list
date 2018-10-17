@@ -52,9 +52,10 @@ System.register(['angular2/core', 'angular2/router', './consultant.service'], fu
                     core_1.Component({
                         templateUrl: 'app/consultants/consultant-detail.component.html'
                     }), 
-                    __metadata('design:paramtypes', [consultant_service_1.ConsultantService, router_1.RouteParams, router_1.Router, router_1.RouteParams])
+                    __metadata('design:paramtypes', [consultant_service_1.ConsultantService, (typeof (_a = typeof router_1.RouteParams !== 'undefined' && router_1.RouteParams) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object, (typeof (_c = typeof router_1.RouteParams !== 'undefined' && router_1.RouteParams) === 'function' && _c) || Object])
                 ], ConsultantDetailComponent);
                 return ConsultantDetailComponent;
+                var _a, _b, _c;
             }());
             exports_1("ConsultantDetailComponent", ConsultantDetailComponent);
         }
