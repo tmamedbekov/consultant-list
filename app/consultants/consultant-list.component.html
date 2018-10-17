@@ -1,0 +1,55 @@
+<div class='panel panel-default'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2'>Filter by expertise:</div>
+            <div class='col-md-4'>
+                <input type='text' 
+                    [(ngModel)]='listFilter'/>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <h3>Expertise in {{listFilter}}</h3>
+            </div>
+        </div>   
+        <div class='table-responsive'>
+            <table class='table' *ngIf='consultants && consultants.length'>
+                <thead>
+                    <tr>
+                        <th><button class='btn btn-default'
+                            (click)='toggleImage()'>
+                            {{showImage ? 'Hide' : 'Show'}} Image
+                            </button>
+                        </th>
+                        <th>Name</th>
+                        <th>MVP</th>
+                        <th>Twitter</th>
+                        <th>Years</th>
+                    </tr>
+                    </thead>
+                <tbody>
+                    <tr *ngFor='#consultant of consultants | consultantFilter:listFilter'>
+                        <td>
+                            <img *ngIf='showImage'
+                                 [src]='consultant.imageUrl' 
+                                 [title]='consultant.consultantName | uppercase'
+                                 [style.width.px]='imageWidth'
+                                 [style.margin.px]='imageMargin'>
+                        </td>
+                        <td>
+                            <a [routerLink]="['ConsultantDetail',{id: consultant.consultantID}]">
+                            {{ consultant.consultantName}} {{ consultant.consultantLname}}
+                            </a>
+                        </td>
+                        <td>{{ consultant.consultantTitle}}</td>
+                        <td>{{ consultant.expertise}}</td>
+                        <td>{{ consultant.levelExpertise}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
