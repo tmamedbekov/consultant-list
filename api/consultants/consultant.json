@@ -21,8 +21,8 @@
     },
     {
         "consultantId": 3,
-        "consultantName": "Dan",
-        "consultantLname": "Luciano",
+        "consultantName": "John",
+        "consultantLname": "Mark",
         "consultantTitle": "Practice Manager",
         "expertise": "JAVA",
         "levelExpertise": "Advanced",
